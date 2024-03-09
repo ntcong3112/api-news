@@ -1,7 +1,7 @@
 module.exports = ({ env }) => ({
   // ...
   "strapi-chatgpt": {
-    enabled: true,
+    enabled: false,
   },
   // "strapi-gpt": {
   //   enabled: true,
