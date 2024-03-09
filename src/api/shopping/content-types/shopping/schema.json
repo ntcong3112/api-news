@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shoppings",
+  "info": {
+    "singularName": "shopping",
+    "pluralName": "shoppings",
+    "displayName": "Sản phẩm liên kết",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "string"
+    },
+    "store": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

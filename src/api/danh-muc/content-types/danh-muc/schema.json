@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "danh_mucs",
+  "info": {
+    "singularName": "danh-muc",
+    "pluralName": "danh-mucs",
+    "displayName": "Danh mục"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
+    }
+  }
+}
