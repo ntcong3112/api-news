@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "danh_mucs",
+  "collectionName": "sub_categories",
   "info": {
-    "singularName": "danh-muc",
-    "pluralName": "danh-mucs",
-    "displayName": "Danh mục",
+    "singularName": "sub-category",
+    "pluralName": "sub-categories",
+    "displayName": "Danh mục con",
     "description": ""
   },
   "options": {
@@ -17,34 +17,34 @@
   },
   "attributes": {
     "name": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "type": "string"
+      }
     },
     "description": {
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "type": "text"
+      }
     },
     "url": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "type": "string"
+      }
     },
-    "danh_muc_cons": {
+    "category": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::sub-category.sub-category",
-      "mappedBy": "category"
+      "relation": "manyToOne",
+      "target": "api::danh-muc.danh-muc",
+      "inversedBy": "danh_muc_cons"
     }
   }
 }

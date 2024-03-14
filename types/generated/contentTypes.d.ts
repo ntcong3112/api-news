@@ -721,6 +721,7 @@ export interface ApiDanhMucDanhMuc extends Schema.CollectionType {
     singularName: 'danh-muc';
     pluralName: 'danh-mucs';
     displayName: 'Danh m\u1EE5c';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -743,6 +744,17 @@ export interface ApiDanhMucDanhMuc extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    url: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    danh_muc_cons: Attribute.Relation<
+      'api::danh-muc.danh-muc',
+      'oneToMany',
+      'api::sub-category.sub-category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -808,6 +820,23 @@ export interface ApiPostPost extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    titleImage: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    url: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    author: Attribute.Relation<
+      'api::post.post',
+      'oneToOne',
+      'api::tac-gia.tac-gia'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -860,6 +889,107 @@ export interface ApiShoppingShopping extends Schema.CollectionType {
   };
 }
 
+export interface ApiSubCategorySubCategory extends Schema.CollectionType {
+  collectionName: 'sub_categories';
+  info: {
+    singularName: 'sub-category';
+    pluralName: 'sub-categories';
+    displayName: 'Danh m\u1EE5c con';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    url: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    category: Attribute.Relation<
+      'api::sub-category.sub-category',
+      'manyToOne',
+      'api::danh-muc.danh-muc'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::sub-category.sub-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::sub-category.sub-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::sub-category.sub-category',
+      'oneToMany',
+      'api::sub-category.sub-category'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiTacGiaTacGia extends Schema.CollectionType {
+  collectionName: 'tac_gias';
+  info: {
+    singularName: 'tac-gia';
+    pluralName: 'tac-gias';
+    displayName: 'T\u00E1c gi\u1EA3';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    avatar: Attribute.Media;
+    bio: Attribute.Text;
+    facebook: Attribute.String;
+    twitter: Attribute.String;
+    email: Attribute.Email;
+    linkedin: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::tac-gia.tac-gia',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::tac-gia.tac-gia',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -880,6 +1010,8 @@ declare module '@strapi/types' {
       'api::danh-muc.danh-muc': ApiDanhMucDanhMuc;
       'api::post.post': ApiPostPost;
       'api::shopping.shopping': ApiShoppingShopping;
+      'api::sub-category.sub-category': ApiSubCategorySubCategory;
+      'api::tac-gia.tac-gia': ApiTacGiaTacGia;
     }
   }
 }
