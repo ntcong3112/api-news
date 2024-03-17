@@ -45,6 +45,21 @@
       "relation": "manyToOne",
       "target": "api::danh-muc.danh-muc",
       "inversedBy": "danh_muc_cons"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

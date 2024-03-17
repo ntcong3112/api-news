@@ -755,6 +755,12 @@ export interface ApiDanhMucDanhMuc extends Schema.CollectionType {
       'oneToMany',
       'api::sub-category.sub-category'
     >;
+    image: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -837,6 +843,11 @@ export interface ApiPostPost extends Schema.CollectionType {
       'oneToOne',
       'api::tac-gia.tac-gia'
     >;
+    subCategory: Attribute.Relation<
+      'api::post.post',
+      'oneToOne',
+      'api::sub-category.sub-category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -867,10 +878,10 @@ export interface ApiShoppingShopping extends Schema.CollectionType {
   attributes: {
     name: Attribute.String;
     images: Attribute.Media;
-    description: Attribute.Text;
     price: Attribute.String;
     store: Attribute.String;
     url: Attribute.String;
+    description: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -929,6 +940,12 @@ export interface ApiSubCategorySubCategory extends Schema.CollectionType {
       'manyToOne',
       'api::danh-muc.danh-muc'
     >;
+    image: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

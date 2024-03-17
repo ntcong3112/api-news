@@ -48,7 +48,7 @@
     },
     "titleImage": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "allowedTypes": [
         "images",
@@ -74,6 +74,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::tac-gia.tac-gia"
+    },
+    "subCategory": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-category.sub-category"
     }
   }
 }

@@ -26,9 +26,6 @@
         "audios"
       ]
     },
-    "description": {
-      "type": "text"
-    },
     "price": {
       "type": "string"
     },
@@ -37,6 +34,9 @@
     },
     "url": {
       "type": "string"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }
