@@ -848,6 +848,11 @@ export interface ApiPostPost extends Schema.CollectionType {
       'oneToOne',
       'api::sub-category.sub-category'
     >;
+    san_pham_lien_kets: Attribute.Relation<
+      'api::post.post',
+      'oneToMany',
+      'api::shopping.shopping'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

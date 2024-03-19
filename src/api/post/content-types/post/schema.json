@@ -79,6 +79,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::sub-category.sub-category"
+    },
+    "san_pham_lien_kets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::shopping.shopping"
     }
   }
 }
