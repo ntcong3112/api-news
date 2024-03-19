@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "bai_viet_noi_bats",
+  "info": {
+    "singularName": "bai-viet-noi-bat",
+    "pluralName": "bai-viet-noi-bats",
+    "displayName": "Bài viết nổi bật"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_post": {
+      "type": "integer"
+    }
+  }
+}

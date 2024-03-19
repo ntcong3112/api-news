@@ -677,6 +677,36 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiBaiVietNoiBatBaiVietNoiBat extends Schema.SingleType {
+  collectionName: 'bai_viet_noi_bats';
+  info: {
+    singularName: 'bai-viet-noi-bat';
+    pluralName: 'bai-viet-noi-bats';
+    displayName: 'B\u00E0i vi\u1EBFt n\u1ED5i b\u1EADt';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    id_post: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::bai-viet-noi-bat.bai-viet-noi-bat',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::bai-viet-noi-bat.bai-viet-noi-bat',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCommentComment extends Schema.CollectionType {
   collectionName: 'comments';
   info: {
@@ -1115,6 +1145,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::bai-viet-noi-bat.bai-viet-noi-bat': ApiBaiVietNoiBatBaiVietNoiBat;
       'api::comment.comment': ApiCommentComment;
       'api::danh-muc.danh-muc': ApiDanhMucDanhMuc;
       'api::post.post': ApiPostPost;
