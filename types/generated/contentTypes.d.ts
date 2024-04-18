@@ -883,6 +883,13 @@ export interface ApiPostPost extends Schema.CollectionType {
       'oneToMany',
       'api::shopping.shopping'
     >;
+    multimedia: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
