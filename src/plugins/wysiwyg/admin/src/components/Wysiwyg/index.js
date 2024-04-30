@@ -40,6 +40,16 @@
                     </p>`;
                     newValue = `${newValue}${imgTag}`;
                 }
+                if (asset.mime.includes('audio')) {
+                    const imgTag = `
+                    <p>
+                    <audio controls>
+                        <source src="${asset.url}" type="audio/mpeg">
+                        Your browser does not support play audio.
+                    </audio>
+                    </p>`;
+                    newValue = `${newValue}${imgTag}`;
+                }
                 // Handle videos and other type of files by adding some code
             });
             onChange({ target: { name, value: newValue } });
