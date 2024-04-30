@@ -33,7 +33,7 @@ module.exports = ({ env }) => ({
           language: "sk",
           height: 500,
           menubar: false,
-          extended_valid_elements: "span, img, small",
+          extended_valid_elements: "span, img, small, video",
           forced_root_block: "",
           convert_urls: false,
           entity_encoding: "raw",

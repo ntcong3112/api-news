@@ -30,6 +30,16 @@
                     const imgTag = `<p><img src="${asset.url}" alt="${asset.alt}"></img></p>`;
                     newValue = `${newValue}${imgTag}`;
                 }
+                if (asset.mime.includes('video')) {
+                    const imgTag = `
+                    <p>
+                    <video controls>
+                        <source src="${asset.url}" type="video/mp4">
+                        Your browser does not support play video.
+                    </video>
+                    </p>`;
+                    newValue = `${newValue}${imgTag}`;
+                }
                 // Handle videos and other type of files by adding some code
             });
             onChange({ target: { name, value: newValue } });
