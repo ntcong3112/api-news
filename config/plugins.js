@@ -1,5 +1,91 @@
 module.exports = ({ env }) => ({
   // ...
+  "rest-cache": {
+    config: {
+      provider: {
+        name: "memory",
+        options: {
+          max: 32767,
+          connection: "default",
+        },
+      },
+      strategy: {
+
+        enableEtagSupport: true,
+        logs: true,
+        clearRelatedCache: true,
+        maxAge: 30000,
+        contentTypes: [
+          // list of Content-Types UID to cache
+          "api::post.post",
+          "api::bai-viet-noi-bat.bai-viet-noi-bat",
+          "api::shopping.shopping",
+          "api::tac-gia.tac-gia",
+          "api::comment.comment",
+          {
+            contentType: "api::post.post",
+            maxAge: 30000,
+            hitpass: false,
+            keys: {
+              useQueryParams: true,
+              useHeaders: ["accept-encoding"],
+            },
+            // // @ts-ignore
+            // maxAge: 18000,
+            method: "GET",
+          },
+          {
+            contentType: "api::bai-viet-noi-bat.bai-viet-noi-bat",
+            maxAge: 30000,
+            hitpass: false,
+            keys: {
+              useQueryParams: true,
+              useHeaders: ["accept-encoding"],
+            },
+            // // @ts-ignore
+            // maxAge: 18000,
+            method: "GET",
+          },
+          {
+            contentType: "api::shopping.shopping",
+            maxAge: 30000,
+            hitpass: false,
+            keys: {
+              useQueryParams: true,
+              useHeaders: ["accept-encoding"],
+            },
+            // // @ts-ignore
+            // maxAge: 18000,
+            method: "GET",
+          },
+          {
+            contentType: "api::tac-gia.tac-gia",
+            maxAge: 60000,
+            hitpass: false,
+            keys: {
+              useQueryParams: true,
+              useHeaders: ["accept-encoding"],
+            },
+            // // @ts-ignore
+            // maxAge: 18000,
+            method: "GET",
+          },
+          {
+            contentType: "api::comment.comment",
+            maxAge: 30000,
+            hitpass: false,
+            keys: {
+              useQueryParams: true,
+              useHeaders: ["accept-encoding"],
+            },
+            // // @ts-ignore
+            // maxAge: 18000,
+            method: "GET",
+          }
+        ],
+      },
+    },
+  },
   "strapi-chatgpt": {
     enabled: false,
   },

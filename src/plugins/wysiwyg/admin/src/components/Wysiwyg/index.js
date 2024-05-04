@@ -10,6 +10,7 @@
     import MediaLib from '../MediaLib';
     import Tinymce from '../Tinymce';
     import { useIntl } from 'react-intl';
+    import "../../styles/global.css";
     const Wysiwyg = ({
         name,
         onChange,
