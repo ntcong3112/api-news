@@ -15,7 +15,7 @@ module.exports = ({ env }) => ({
         enableEtagSupport: true,
         logs: true,
         clearRelatedCache: true,
-        maxAge: 60000,
+        maxAge: 600000,
         contentTypes: [
           // list of Content-Types UID to cache
           "api::post.post",
@@ -25,7 +25,7 @@ module.exports = ({ env }) => ({
           "api::comment.comment",
           {
             contentType: "api::post.post",
-            maxAge: 60000,
+            maxAge: 600000,
             hitpass: false,
             keys: {
               useQueryParams: true,
@@ -37,7 +37,7 @@ module.exports = ({ env }) => ({
           },
           {
             contentType: "api::bai-viet-noi-bat.bai-viet-noi-bat",
-            maxAge: 120000,
+            maxAge: 1200000,
             hitpass: false,
             keys: {
               useQueryParams: true,
@@ -49,7 +49,7 @@ module.exports = ({ env }) => ({
           },
           {
             contentType: "api::shopping.shopping",
-            maxAge: 60000,
+            maxAge: 600000,
             hitpass: false,
             keys: {
               useQueryParams: true,
@@ -61,7 +61,7 @@ module.exports = ({ env }) => ({
           },
           {
             contentType: "api::tac-gia.tac-gia",
-            maxAge: 60000,
+            maxAge: 600000,
             hitpass: false,
             keys: {
               useQueryParams: true,
@@ -73,7 +73,7 @@ module.exports = ({ env }) => ({
           },
           {
             contentType: "api::comment.comment",
-            maxAge: 60000,
+            maxAge: 600000,
             hitpass: false,
             keys: {
               useQueryParams: true,
@@ -83,7 +83,7 @@ module.exports = ({ env }) => ({
           },
           {
             contentType: "api::danh-muc.danh-muc",
-            maxAge: 60000,
+            maxAge: 600000,
             hitpass: false,
             keys: {
               useQueryParams: true,
