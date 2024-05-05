@@ -6,6 +6,7 @@ import tinymce from "@sklinet/strapi-plugin-tinymce/strapi-admin";
 import i18N from "@strapi/plugin-i18n/strapi-admin";
 import usersPermissions from "@strapi/plugin-users-permissions/strapi-admin";
 import strapiChatgpt from "strapi-chatgpt/strapi-admin";
+import importExportEntries from "strapi-plugin-import-export-entries/strapi-admin";
 import restCache from "strapi-plugin-rest-cache/strapi-admin";
 import wysiwygReactMdEditor from "strapi-plugin-wysiwyg-react-md-editor/strapi-admin";
 import wysiwyg from "../../src/plugins/wysiwyg/strapi-admin";
@@ -20,6 +21,7 @@ renderAdmin(document.getElementById("strapi"), {
     i18n: i18N,
     "users-permissions": usersPermissions,
     "strapi-chatgpt": strapiChatgpt,
+    "import-export-entries": importExportEntries,
     "rest-cache": restCache,
     "wysiwyg-react-md-editor": wysiwygReactMdEditor,
     wysiwyg: wysiwyg,

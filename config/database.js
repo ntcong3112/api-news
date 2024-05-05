@@ -6,6 +6,8 @@ module.exports = ({ env }) => {
   const connections = {
     mysql: {
       connection: {
+        charset: env('DATABASE_CHARSET', 'utf8mb4'),
+
         connectionString: env('DATABASE_URL'),
         host: env('DATABASE_HOST', 'localhost'),
         port: env.int('DATABASE_PORT', 3306),
@@ -28,6 +30,8 @@ module.exports = ({ env }) => {
     },
     mysql2: {
       connection: {
+        charset: env('DATABASE_CHARSET', 'utf8mb4'),
+
         host: env('DATABASE_HOST', 'localhost'),
         port: env.int('DATABASE_PORT', 3306),
         database: env('DATABASE_NAME', 'strapi'),
@@ -49,6 +53,7 @@ module.exports = ({ env }) => {
     },
     postgres: {
       connection: {
+        charset: "utf8",
         connectionString: env('DATABASE_URL'),
         host: env('DATABASE_HOST', 'localhost'),
         port: env.int('DATABASE_PORT', 5432),

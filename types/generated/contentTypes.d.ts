@@ -947,7 +947,7 @@ export interface ApiShoppingShopping extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    url: Attribute.String &
+    url: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
