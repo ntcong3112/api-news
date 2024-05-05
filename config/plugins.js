@@ -79,8 +79,16 @@ module.exports = ({ env }) => ({
               useQueryParams: true,
               useHeaders: ["accept-encoding"],
             },
-            // // @ts-ignore
-            // maxAge: 18000,
+            method: "GET",
+          },
+          {
+            contentType: "api::danh-muc.danh-muc",
+            maxAge: 60000,
+            hitpass: false,
+            keys: {
+              useQueryParams: true,
+              useHeaders: ["accept-encoding"],
+            },
             method: "GET",
           }
         ],
