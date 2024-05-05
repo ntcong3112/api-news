@@ -1,5 +1,6 @@
 module.exports = ({ env }) => ({
   // ...
+  
   "rest-cache": {
     config: {
       provider: {
@@ -14,7 +15,7 @@ module.exports = ({ env }) => ({
         enableEtagSupport: true,
         logs: true,
         clearRelatedCache: true,
-        maxAge: 30000,
+        maxAge: 60000,
         contentTypes: [
           // list of Content-Types UID to cache
           "api::post.post",
@@ -24,7 +25,7 @@ module.exports = ({ env }) => ({
           "api::comment.comment",
           {
             contentType: "api::post.post",
-            maxAge: 30000,
+            maxAge: 60000,
             hitpass: false,
             keys: {
               useQueryParams: true,
@@ -36,7 +37,7 @@ module.exports = ({ env }) => ({
           },
           {
             contentType: "api::bai-viet-noi-bat.bai-viet-noi-bat",
-            maxAge: 30000,
+            maxAge: 120000,
             hitpass: false,
             keys: {
               useQueryParams: true,
@@ -48,7 +49,7 @@ module.exports = ({ env }) => ({
           },
           {
             contentType: "api::shopping.shopping",
-            maxAge: 30000,
+            maxAge: 60000,
             hitpass: false,
             keys: {
               useQueryParams: true,
@@ -72,7 +73,7 @@ module.exports = ({ env }) => ({
           },
           {
             contentType: "api::comment.comment",
-            maxAge: 30000,
+            maxAge: 60000,
             hitpass: false,
             keys: {
               useQueryParams: true,
